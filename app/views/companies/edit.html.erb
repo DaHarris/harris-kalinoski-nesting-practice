@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h1>Edit Company</h1>
+</div>
+
+<%= form_for @company do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :suffix %>
+  <%= f.text_field :suffix %>
+  <br>
+  <%= f.label :catch_phrase %>
+  <%= f.text_field :catch_phrase %>
+  <br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <br>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <br>
+  <%= f.label :industry %>
+  <%= f.text_field :industry %>
+  <br>
+  <%= f.submit %>
+
+<% end %>
