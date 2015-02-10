@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @locations = @company.locations
   end
 
   def new

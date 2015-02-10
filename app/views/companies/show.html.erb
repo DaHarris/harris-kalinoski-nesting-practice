@@ -17,3 +17,32 @@
   <li>Start Date: <%= @company.start_date %></li>
   <li>Industry: <%= @company.industry %></li>
 </ul>
+
+<div class="pull-right">
+  <a class="btn btn-primary" <%= link_to 'New Location', new_company_location_path(@company) %> </a>
+</div>
+<h1>Locations</h1>
+<hr>
+<table class="table table-striped table-hover">
+  <thead>
+    <th>City</th>
+    <th>Street Name</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Zip Code</th>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= link_to location.city, company_location_path(@company, location) %></td>
+        <td><%= location.street_name %></td>
+        <td><%= location.state %></td>
+        <td><%= location.country %></td>
+        <td><%= location.zip_code %></td>
+        <td><a class="btn btn-info" <%= link_to 'Edit Location', edit_company_location_path(@company, location) %></a></td>
+        <td><a class="btn btn-danger" <%= link_to 'Delete', company_location_path(@company, location), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

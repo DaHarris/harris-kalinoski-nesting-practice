@@ -1,5 +1,9 @@
 class LocationsController < ApplicationController
 
+  def show
+    @location = Location.find(params[:id])
+  end
+
   def new
     @location = Location.new
   end
@@ -29,6 +33,8 @@ class LocationsController < ApplicationController
     @company = Company.find(params[:company_id])
     redirect_to company_path(@company)
   end
+
+  private
 
   def location_params
     params.require(:location).permit(:city, :street_name, :state, :zip_code, :country)
