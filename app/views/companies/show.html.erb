@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1><%= @company.name + ' ' + @company.suffix %></h1>
+</div>
+
+<ul>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <h6><li><%= @company.catch_phrase %></li></h6>
+    </div>
+  </div>
+</ul>
+
+<br>
+
+<ul>
+  <li>Email: <%= @company.email %></li>
+  <li>Start Date: <%= @company.start_date %></li>
+  <li>Industry: <%= @company.industry %></li>
+</ul>

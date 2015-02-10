@@ -1,9 +1,12 @@
 
 <div class="page-header">
+  <div class="pull-right">
+      <a class="btn btn-info" <%= link_to 'New Company', new_company_path %></a>
+  </div>
   <h1>Companies</h1>
 </div>
 
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <th>Name</th>
     <th>Suffix</th>
@@ -22,6 +25,8 @@
         <td><%= company.email %></td>
         <td><%= company.start_date %></td>
         <td><%= company.industry %></td>
+        <td><a class="btn btn-info" <%= link_to 'Edit Company', edit_company_path(company) %></a></td>
+        <td><a class="btn btn-danger" <%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
